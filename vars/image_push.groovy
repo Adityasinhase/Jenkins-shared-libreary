@@ -4,7 +4,7 @@ def call(String dockerhubcreds, String imagename, String version){
                     usernameVariable: "$dockerHubUsername")])
                 {
                 sh "docker login -u ${env.dockerHubUsername} -p ${env.dockerHubPassword}"
-                sh "docker image tag flask_app_image ${env.dockerHubUsername}/$imagename:$version"
-                sh "docker push ${env.dockerHubUsername}/$imagename:$version"
+                sh "docker image tag ${imagename} ${env.dockerHubUsername}/${imagename}:${version}"
+                sh "docker push ${env.dockerHubUsername}/${imagename}:${version}"
                 }
 }
