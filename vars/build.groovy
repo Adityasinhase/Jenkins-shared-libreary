@@ -1,3 +1,3 @@
-def call(string app_name, string version){
+def call(String app_name, String version){
   sh "docker build -t "${app_name}":"${version}" ."
 }
